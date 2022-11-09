@@ -27,39 +27,53 @@ public class locators  extends automationone {
 		getDriver();
 		
 		driver.get("https://admin5.beta-wspbx.com");
+		String url=driver.getCurrentUrl();
+		System.out.println(url);
 		Thread.sleep(5000);
 		driver.manage().window().maximize();
+		String title=driver.getTitle();
+		System.out.println(title);
 		Usenamefield();
 		
 		driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("abc@12345");//password
 		driver.findElement(By.xpath("//*[@id=\"mainlogin\"]/div/div/input[2]")).click(); //View Manager
 		driver.manage().window().maximize();
+		
 		driver.findElement(By.xpath("//*[@id=\"tab3\"]/a")).click(); //User Search
 		driver.findElement(By.xpath("//*[@id=\"deepsearch_topfrm\"]")).sendKeys("aaatestingdeev");//username enter in serach
 		driver.findElement(By.xpath("//*[@id=\"UserMainAction\"]/input[31]")).click(); //Go button
 		Thread.sleep(5000);
+		driver.navigate().to("https://www.youtube.com");
+	    Thread.sleep(6000);
+	    driver.navigate().back();
+	    Thread.sleep(5000);
+	    driver.navigate().forward();
+	    Thread.sleep(5000);
+	    driver.navigate().back();
+	    
 		
-		WebElement exopand=driver.findElement(By.xpath("//div[@id='div_collapse_1_aaatestingdeev@socrates']/a"));
+		/*WebElement exopand=driver.findElement(By.xpath("//div[@id='div_collapse_1_aaatestingdeev@socrates']/a"));
 		System.out.println("text--->"+driver.findElement(By.xpath("//div[@class='expandCollapseName userMaxWidth']")).getText());
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		executor.executeScript("arguments[0].click();", exopand);
 		String text=driver.findElement(By.xpath("//strong[contains(text(),'User Info')]")).getText();
 		System.out.println("etxt----->"+text);
+		Thread.sleep(5000);*/
+		
+		//elementtobeclickble(Duration.ofSeconds(10), driver.findElement(By.id("maximized_icon_aaatestingdeev@socrates")));
+		
+		
 		Thread.sleep(5000);
-		
-		elementtobeclickble(Duration.ofSeconds(20), driver.findElement(By.id("maximized_icon_aaatestingdeev@socrates")));
-		
-		driver.findElement(By.id("maximized_icon_aaatestingdeev@socrates")).click();
-		driver.navigate().refresh();
-		Thread.sleep(3000);
-		WebElement aa=driver.findElement(By.xpath("//*[@id='tab4']/a"));
+		//driver.navigate().refresh();
+		/*Thread.sleep(3000);
+		WebElement aa=driver.findElement(By.xpath("//*[@id=\"tab4\"]/a"));
 		Actions action=new Actions(driver);
 		action.moveToElement(aa).perform();
 		WebElement bb=driver.findElement(By.id("tab4_18"));
 		bb.click();
 
 		driver.close();
-		
+		*/
 		
 		
 		

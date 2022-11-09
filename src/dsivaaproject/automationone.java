@@ -12,7 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class automationone extends sivaone {
+public class automationone extends parent {
 	
 
 	public  static void elementtobeclickble(Duration time,WebElement element) {
